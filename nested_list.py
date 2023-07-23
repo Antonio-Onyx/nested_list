@@ -11,18 +11,28 @@ if __name__ == '__main__':
         nested_list.append(lista)
         
     #ordenamos la lista por orden alfabetico
-    print(nested_list)    
+    #print(nested_list)    
     nested_list.sort()
-    print(nested_list)
+    #print(nested_list)
     
-    val = []
+    score = []
     for inner in nested_list:
-        val.append(inner[1])
+        score.append(inner[1])
         
-    mini = min(val)
-    for v in nested_list:
-        if v[1] == mini:
-            nested_list.remove(v)
-            
+    score.sort()
+    #print(score)
+    cant = score.count(min(score))
+    #print(cant)
     
-    print(nested_list)        
+    first_min = min(score)
+    #score.remove(score[0])
+    #rint(score)
+    
+    new_score = [s for s in score if s != first_min]
+    
+    #print(new_score)
+    
+    for v in nested_list:
+        if new_score[0] in v:
+            print(v[0])
+    
