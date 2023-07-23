@@ -10,24 +10,29 @@ if __name__ == '__main__':
         lista = [name, score]
         nested_list.append(lista)
         
+    #ordenamos la lista por orden alfabetico
+    #print(nested_list)    
+    nested_list.sort()
+    #print(nested_list)
     
-    #to go through every element in this list, use a nested for loop.
     score = []
     for inner in nested_list:
         score.append(inner[1])
         
-    score.remove(min(score))
-    pos = score.count(score[0])
     score.sort()
+    #print(score)
+    cant = score.count(min(score))
+    #print(cant)
     
+    first_min = min(score)
+    #score.remove(score[0])
+    #rint(score)
     
-    names = []
-    for iiner in nested_list:
-        if score[pos-1] in iiner:
-            print(iiner)
-            names.append(iiner)
-            
-    names.sort()
-
-    for i in names:
-        print(i[0])        
+    new_score = [s for s in score if s != first_min]
+    
+    #print(new_score)
+    
+    for v in nested_list:
+        if new_score[0] in v:
+            print(v[0])
+    
