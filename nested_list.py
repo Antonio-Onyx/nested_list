@@ -10,6 +10,19 @@ if __name__ == '__main__':
         lista = [name, score]
         nested_list.append(lista)
         
+    #ordenamos la lista por orden alfabetico
     print(nested_list)    
     nested_list.sort()
     print(nested_list)
+    
+    val = []
+    for inner in nested_list:
+        val.append(inner[1])
+        
+    mini = min(val)
+    for v in nested_list:
+        if v[1] == mini:
+            nested_list.remove(v)
+            
+    
+    print(nested_list)        
